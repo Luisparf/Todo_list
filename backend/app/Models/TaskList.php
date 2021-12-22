@@ -31,7 +31,7 @@ class TaskList extends Model
         ->find($id);
  
         if (!$show) {
-            throw new \Exception('Nada Encontrado', -404);
+            throw new \Exception('Nothing found.', -404);
         }
 
         return $show;
