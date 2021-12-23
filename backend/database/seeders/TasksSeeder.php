@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TasksSeeder extends Seeder
 {
@@ -14,5 +15,6 @@ class TasksSeeder extends Seeder
     public function run()
     {
         //
+        \App\Tasks::factory()->create();
     }
 }
