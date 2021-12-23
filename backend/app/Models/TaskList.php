@@ -3,9 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+use App\Tasks;
+use App\User;
 
 class TaskList extends Model
 {
+    Use hasFactory;
+    
     protected $fillable = ['user_id','title','status'];
 
     public function index(){
@@ -40,7 +47,6 @@ class TaskList extends Model
     public function updateList($fields, $id)
     {
         $tasklist = $this->show($id);
-
         $tasklist->update($fields);
         return $tasklist;
     }
@@ -48,7 +54,6 @@ class TaskList extends Model
     public function destroyList($id)
     {
         $tasklist = $this->show($id);
-
         $tasklist->delete();
         return $tasklist;
     }
@@ -60,4 +65,6 @@ class TaskList extends Model
     public function tasks(){
         return $this->hasMany('App\Tasks');
     }
+
+   
 }

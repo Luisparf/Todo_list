@@ -27,7 +27,7 @@ class StoreTaskList extends FormRequest
     public function rules()
     {
         return [
-            'title'      => 'required'
+            'title'=>'required'
         ];
     }
 
@@ -42,7 +42,7 @@ class StoreTaskList extends FormRequest
 
         if ($validator->fails()) {
             throw new HttpResponseException(response()->json([
-                'msg'   => 'Ops! Algum campo obrigatório não foi preenchido.',
+                'msg'   => 'Ops! Some mandatory field was not filled.',
                 'status' => false,
                 'errors'    => $validator->errors(),
                 'url'    => route('tasklist.store')
