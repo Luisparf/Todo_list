@@ -1,11 +1,11 @@
-import React, { useState,   fect } from 'react';
+import React, { useState,   useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Header from '../../components/Header'
 import Task from '../../components/Task'
 import InsertList from '../../components/InsertList'
 import InsertTask from '../../components/InsertTask'
 import { Container, Grid  } from '@material-ui/core';
-import api from '../services/api';
+import api from '../../services/api';
 import './styles.css';
 
 export default function Lists() {

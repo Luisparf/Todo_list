@@ -43,7 +43,7 @@ export default function Logon() {
           <button className="button" type="submit">Login</button>
 
           <Link className="back-link" to="/register">
-            <FiLogIn size={16} color="#3498db" />
+            <FiLogIn size={16} color="#ca83d3"/>
             I'm not registered
           </Link>
         </form>

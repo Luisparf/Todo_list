@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
-
 import api from '../../services/api';
 import './styles.css';
 
@@ -41,12 +40,12 @@ export default function Register() {
     <div className="register-container">
       <div className="content">
         <section>
-          <h1>Cadastro</h1>
-          <p>Do your register, sign in and organize your tasks.</p>
+          <h1>Register</h1>
+          <p>Register yourself, sign in and organize your tasks.</p>
 
           <Link className="back-link" to="/">
-            <FiArrowLeft size={16} color="#3498db" />
-            Já possuo cadastro
+            <FiArrowLeft size={16} color="#ca83d3"/>
+            I'm registered already
           </Link>
         </section>
 
