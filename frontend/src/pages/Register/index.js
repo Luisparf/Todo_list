@@ -26,8 +26,8 @@ export default function Register() {
       await api.post('api/register', data)
       .then(async (res) =>{
         if(res.data.status){
-          const responseLogin = await api.post('api/login', { email, password });
-          localStorage.setItem('token', responseLogin.data.token);
+         const responseLogin = await api.post('api/login', { email, password });
+         localStorage.setItem('token', responseLogin.data.token);
           history.push('/lists');
         }
       });
