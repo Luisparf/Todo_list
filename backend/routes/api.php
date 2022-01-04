@@ -24,12 +24,19 @@ Route::post('login', 'App\Http\Controllers\UserController@login')->name('users.l
 
 Route::group(['prefix' => 'v1', 'middleware' => 'jwt.verify'], function () {
   Route::apiResources([
-    'tasklist'  =>  'TaskListController',
-    'tasks'  =>  'TasksController',
+    'tasklist'  =>  'App\Http\Controllers\TaskListController',
+    'tasks'  =>  'App\Http\Controllers\TasksController',
   ]);
 
-  Route::post('completedTaskList', 'App\Http\Controllers\TaskListController@completedTaskList')->name('tasklist.completedTaskList');
+  //Route::post('completedTaskList', 'App\Http\Controllers\TaskListController@completedTaskList')->name('tasklist.completedTaskList');
   Route::put('task/close/{id}', 'App\Http\Controllers\TasksController@closeTask')->name('tasks.closeTask');
   Route::get('list/tasks/{id}', 'App\Http\Controllers\TasksController@tasksByList')->name('tasks.tasksByList');
   Route::post('logout', 'UserController@logout')->name('users.logout');
-});
+}); 
+
+/*
+Route::get('index', 'App\Http\Controllers\TaskListController@index')->name('tasklist.index');
+Route::get('show', 'App\Http\Controllers\TaskListController@show')->name('tasklist.show');
+Route::post('store', 'App\Http\Controllers\TaskListController@store')->name('tasklist.store');
+Route::put('update', 'App\Http\Controllers\TaskListController@update')->name('tasklist.update');
+Route::delete('destroy', 'App\Http\Controllers\TaskListController@destroy')->name('tasklist.destroy'); */

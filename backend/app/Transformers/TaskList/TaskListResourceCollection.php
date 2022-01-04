@@ -3,7 +3,6 @@
 namespace App\Transformers\TaskList;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
-
 use App\Services\ResponseService;
 
 class TaskListResourceCollection extends ResourceCollection

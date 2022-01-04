@@ -49,7 +49,7 @@ class TaskListController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\TaskList  $taskList
+     * @param  \App\Models\TaskList  $taskList
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -87,7 +87,7 @@ class TaskListController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\TaskList  $id
+     * @param  \App\Models\TaskList  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

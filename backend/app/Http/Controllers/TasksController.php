@@ -48,7 +48,7 @@ class TasksController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Tasks  $tasks
+     * @param  \App\Models\Tasks  $tasks
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -65,7 +65,7 @@ class TasksController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Tasks  $tasks
+     * @param  \App\Models\Tasks  $tasks
      * @return \Illuminate\Http\Response
      */
     public function tasksByList($id)
@@ -82,7 +82,7 @@ class TasksController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Tasks  $tasks
+     * @param  \App\Models\Tasks  $tasks
      * @return \Illuminate\Http\Response
      */
     public function closeTask($id)
@@ -116,7 +116,7 @@ class TasksController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Tasks  $id
+     * @param  \App\Models\Tasks  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
