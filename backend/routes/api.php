@@ -14,9 +14,9 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::post('register', 'UserController@store')->name('users.store');
-//Route::post('/', 'App\Http\Controllers\UserController@create');
-Route::post('login', 'UserController@login')->name('users.login');
+Route::post('register', 'App\Http\Controllers\UserController@store')->name('users.store');
+//Route::post('register', ['App\Http\Controllers\UserController@users.store']);
+Route::post('login', 'App\Http\Controllers\UserController@login')->name('users.login');
 
 Route::group(['prefix' => 'v1', 'middleware' => 'jwt.verify'], function () {
   Route::apiResources([

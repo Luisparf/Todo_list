@@ -23,7 +23,7 @@ export default function Register() {
     };
     
     try {
-      await api.post('api/register', data)
+      api.post('api/register', data)
       .then(async (res) =>{
         if(res.data.status){
          const responseLogin = await api.post('api/login', { email, password });
