@@ -9,7 +9,7 @@ use App\Services\ResponseService;
 use App\Transformers\User\UserResource;
 use App\Transformers\User\UserResourceCollection;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Validator;   
 
 class UserController extends Controller
 {
@@ -27,22 +27,24 @@ class UserController extends Controller
      */
     public function store(StoreUser $request)
     {
-        /*try{        
+        try{        
             $user = $this->user->create($request->all());
         }catch(\Throwable|\Exception $e){
             return ResponseService::exception('users.store',null,$e);
-        } */
-        try{
+        } 
+       /* try{
             $user = $this
             ->user
             ->create([
                'name' => $request->get('name'),
                'email' => $request->get('email'),
-               'password' => Hash::make($request->get('password')),
+               //'password' => Hash::make($request->get('password')),
+               'password' => $request->get('password'),
+
             ]);
          }catch(\Throwable|\Exception $e){
             return ResponseService::exception('users.store',null,$e);
-        } 
+        } */
 
         return new UserResource($user,array('type' => 'store','route' => 'users.store'));
     }

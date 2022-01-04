@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TasksController;
+use App\Http\Controllers\TaskListController;
+//use App\Services\ResponseService;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,8 +28,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'jwt.verify'], function () {
     'tasks'  =>  'TasksController',
   ]);
 
-  Route::post('completedTaskList', 'TaskListController@completedTaskList')->name('tasklist.completedTaskList');
-  Route::put('task/close/{id}', 'TasksController@closeTask')->name('tasks.closeTask');
-  Route::get('list/tasks/{id}', 'TasksController@tasksByList')->name('tasks.tasksByList');
+  Route::post('completedTaskList', 'App\Http\Controllers\TaskListController@completedTaskList')->name('tasklist.completedTaskList');
+  Route::put('task/close/{id}', 'App\Http\Controllers\TasksController@closeTask')->name('tasks.closeTask');
+  Route::get('list/tasks/{id}', 'App\Http\Controllers\TasksController@tasksByList')->name('tasks.tasksByList');
   Route::post('logout', 'UserController@logout')->name('users.logout');
 });

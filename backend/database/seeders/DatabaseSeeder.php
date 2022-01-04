@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {

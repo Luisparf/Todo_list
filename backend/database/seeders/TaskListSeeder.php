@@ -16,6 +16,6 @@ class TaskListSeeder extends Seeder
     public function run()
     {
       
-        \App\TaskList::factory()->create();
+        \App\Models\TaskList::factory()->create();
     }
 }

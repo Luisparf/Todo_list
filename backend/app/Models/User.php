@@ -15,7 +15,7 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use HasApiTokens, HasFactory, Notifiable;
+     use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -52,13 +52,22 @@ class User extends Authenticatable implements JWTSubject
         return parent::create([
             'name' => $fields['name'],
             'email' => $fields['email'] ,
+            //'password' => $fields['password'],
             'password' => Hash::make($fields['password']),
+
         ]);
     }
 
-    public function login($credentials){
+    /* public function login($credentials){
         if (!$token = JWTAuth::attempt($credentials, ['exp' => Carbon::now()->addDays(1)->timestamp])) {
             throw new \Exception('Wrong credentials, try again.', -404);
+        }
+        return $token;
+    } */
+
+    public function login($credentials){
+        if (!$token = JWTAuth::attempt($credentials)) {
+            throw new \Exception('Credencias incorretas, verifique-as e tente novamente.', -404);
         }
         return $token;
     }
