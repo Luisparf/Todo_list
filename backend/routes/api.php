@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('register', 'UserController@store')->name('users.store');
+//Route::post('/', 'App\Http\Controllers\UserController@create');
 Route::post('login', 'UserController@login')->name('users.login');
 
 Route::group(['prefix' => 'v1', 'middleware' => 'jwt.verify'], function () {

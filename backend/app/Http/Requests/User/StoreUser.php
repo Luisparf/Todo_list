@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\User;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Contracts\Validation\Validator;
@@ -28,9 +28,9 @@ class StoreUser extends FormRequest
     public function rules()
     {
         return [
-            'email'     => 'unique:users,email|email|required',
-            'name'      => 'required',
-            'password'  => 'required'
+            'email' => 'unique:users,email|email|required',
+            'name' => 'required',
+            'password' => 'required'
         ];
     }
 

@@ -16,14 +16,14 @@ export default function Register() {
     e.preventDefault();
 
     const data = {
-      name,
-      email,
-      password,
+      "name":name,
+      "email":email,
+      "password":password,
       "password_confirmation":confirmPassword,
     };
     
     try {
-      api.post('api/register', data)
+      await api.post('api/register', data)
       .then(async (res) =>{
         if(res.data.status){
           const responseLogin = await api.post('api/login', { email, password });

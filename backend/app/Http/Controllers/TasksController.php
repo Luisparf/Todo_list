@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Tasks;
+use App\Models\Tasks;
 use Illuminate\Http\Request;
 use App\Http\Requests\Task\StoreTask;
 use App\Services\ResponseService;

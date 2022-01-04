@@ -1,13 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Tasks;
-use App\User;
+use App\Models\Tasks;
+use App\Models\User;
 
 class TaskList extends Model
 {
@@ -59,11 +59,11 @@ class TaskList extends Model
     }
 
     public function user(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Models\User');
     }
 
     public function tasks(){
-        return $this->hasMany('App\Tasks');
+        return $this->hasMany('App\Models\Tasks');
     }
 
    

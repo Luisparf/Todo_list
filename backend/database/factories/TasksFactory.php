@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Tasks;
+use App\Models\Tasks;
 use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -24,7 +24,7 @@ class TasksFactory extends Factory
      */
     public function definition()
     {
-        $tasklist = \App\TaskList::factory()->create();
+        $tasklist = \App\Models\TaskList::factory()->create();
     
         return [
             'user_id' => $tasklist['user_id'],

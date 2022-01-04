@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -57,8 +57,8 @@ class User extends Authenticatable implements JWTSubject
     }
 
     public function login($credentials){
-        if (!$token = JWTAuth::attempt($credentials)) {
-            throw new \Exception('Wrong credentials, verify them and try again.', -404);
+        if (!$token = JWTAuth::attempt($credentials, ['exp' => Carbon::now()->addDays(1)->timestamp])) {
+            throw new \Exception('Wrong credentials, try again.', -404);
         }
         return $token;
     }
@@ -80,9 +80,11 @@ class User extends Authenticatable implements JWTSubject
     } 
     
     public function tasklist(){
-        return $this->hasMany('App\TaskList');
+        return $this->hasMany('App\Models\TaskList', 'user_id', 'id');
+        //return $this->hasMany('App\Models\TaskList');
+
       }
       public function tasks(){
-       return $this->hasMany('App\Tasks');
+        return $this->hasMany('App\Models\Tasks');
       }
 }

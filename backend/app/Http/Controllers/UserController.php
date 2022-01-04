@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\User\StoreUser;
 use App\Services\ResponseService;
@@ -27,13 +27,22 @@ class UserController extends Controller
      */
     public function store(StoreUser $request)
     {
-        try{        
-            $user = $this
-            ->user
-            ->create($request->all());
+        /*try{        
+            $user = $this->user->create($request->all());
         }catch(\Throwable|\Exception $e){
             return ResponseService::exception('users.store',null,$e);
-        }
+        } */
+        try{
+            $user = $this
+            ->user
+            ->create([
+               'name' => $request->get('name'),
+               'email' => $request->get('email'),
+               'password' => Hash::make($request->get('password')),
+            ]);
+         }catch(\Throwable|\Exception $e){
+            return ResponseService::exception('users.store',null,$e);
+        } 
 
         return new UserResource($user,array('type' => 'store','route' => 'users.store'));
     }
