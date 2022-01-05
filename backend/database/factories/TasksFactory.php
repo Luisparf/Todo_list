@@ -29,6 +29,7 @@ class TasksFactory extends Factory
         return [
             'user_id' => $tasklist['user_id'],
             'list_id' => $tasklist['id'],
+            //'title' => $faker->name,
             'title' => $this->faker->name,
             'status' => 0,
         ];

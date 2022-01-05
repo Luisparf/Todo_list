@@ -31,7 +31,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'jwt.verify'], function () {
   //Route::post('completedTaskList', 'App\Http\Controllers\TaskListController@completedTaskList')->name('tasklist.completedTaskList');
   Route::put('task/close/{id}', 'App\Http\Controllers\TasksController@closeTask')->name('tasks.closeTask');
   Route::get('list/tasks/{id}', 'App\Http\Controllers\TasksController@tasksByList')->name('tasks.tasksByList');
-  Route::post('logout', 'UserController@logout')->name('users.logout');
+  Route::post('logout', 'App\Http\Controllers\UserController@logout')->name('users.logout');
 }); 
 
 /*

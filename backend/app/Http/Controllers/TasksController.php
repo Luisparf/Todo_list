@@ -37,7 +37,9 @@ class TasksController extends Controller
     public function store(StoreTask $request)
     {
         try{        
-            $data = $this->tasks->store($request->all());
+            $data = $this
+            ->tasks
+            ->store($request->all());
         }catch(\Throwable|\Exception $e){
             return ResponseService::exception('tasks.store',null,$e);
         }
@@ -71,7 +73,9 @@ class TasksController extends Controller
     public function tasksByList($id)
     {
         try{        
-            $data = $this->tasks->tasksByList($id);
+            $data = $this
+            ->tasks
+            ->tasksByList($id);
         }catch(\Throwable|\Exception $e){
             return ResponseService::exception('tasks.tasksByList',$id,$e);
         }
