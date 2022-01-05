@@ -18,8 +18,7 @@ class TaskList extends Model
     public function index(){
         return auth()
         ->user()
-        ->TaskList
-        ->sortBy("status");
+        ->TaskList;
     }
 
     public function create($fields)
@@ -59,11 +58,12 @@ class TaskList extends Model
     }
 
     public function user(){
-        return $this->belongsTo('App\Models\User');
+        //return $this->belongsTo('App\Models\User');
+        return $this->belongsTo('App\Models\User', 'user_id', 'id');
     }
 
     public function tasks(){
-        return $this->hasMany('App\Models\Tasks');
+        return $this->hasMany('App\Models\Tasks', 'user_id', 'user_id', 'list_id', 'id');
     }
 
    

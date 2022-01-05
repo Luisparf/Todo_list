@@ -89,8 +89,8 @@ class User extends Authenticatable implements JWTSubject
     } 
     
     public function tasklist(){
-        return $this->hasMany('App\Models\TaskList', 'user_id', 'id');
-        //return $this->hasMany('App\Models\TaskList');
+        //return $this->hasMany('App\Models\TaskList', 'user_id', 'id');
+        return $this->hasMany('App\Models\TaskList');
 
       }
       public function tasks(){

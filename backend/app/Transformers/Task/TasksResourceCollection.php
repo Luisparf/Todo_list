@@ -4,6 +4,7 @@ namespace App\Transformers\Tasks;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 use App\Services\ResponseService;
+use App\Models\Tasks;
 
 class TasksResourceCollection extends ResourceCollection
 {

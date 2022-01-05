@@ -26,7 +26,7 @@ class TaskListFactory extends Factory
     {
         return [
             'user_id' => function() {
-               // return factory(App\User::class)->create()->id;
+          
                 return \App\Models\User::factory()->create()->id; // pode dar zica
               },
               'title' => $this->faker->name,
