@@ -4,6 +4,8 @@
 inside the directory "docker-compose-lamp" execute:
 'docker-compose up -d'
 
+if you have some problem with address execute:
+'sudo netstat -p -nlp | grep 3306' then 'sudo kill 'pid'" (i tried to change the port but have problems)
 
 # star backend
 inside the directory "backend" execute:
