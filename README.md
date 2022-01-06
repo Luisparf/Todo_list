@@ -1,24 +1,20 @@
 # todolist
 
 # iniciar banco de dados lamp por docker
-docker-compose up -d
+inside the directory "docker-compose-lamp" execute:
+'docker-compose up -d'
 
-# logar no banco
-docker exec -it lamp-database bash
 
 # star backend
-php artisan serve
+inside the directory "backend" execute:
+'composer update' then:
+'composer dump-autoload' then:
+'composer artisan serve'
 
-# start frontend
-npm run start
+# start app
+inside frontend directory execute:
+'npm run start'
 
-composer dump-autoload
-
-
-# migrates
-php artisan migrate:fresh --seed
-
-# limpar cache, rota
-php artisan cache:clear
-php artisan config:clear
-php artisan route:clear
+if any error occur execute:
+'yarn' then:
+'yarn start'
