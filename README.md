@@ -7,9 +7,11 @@ inside the directory "docker-compose-lamp" execute:
 
 # star backend
 inside the directory "backend" execute:
+'php artisan serve' 
+if some error ocurr execute:
 'composer update' then:
 'composer dump-autoload' then:
-'composer artisan serve'
+'php artisan serve'
 
 # start app
 inside frontend directory execute:
