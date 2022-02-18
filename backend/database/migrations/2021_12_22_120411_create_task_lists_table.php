@@ -17,7 +17,7 @@ class CreateTaskListsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users'); // task_list terá como fk o user_id, referenciando a coluna id da tabela users
-            $table->string('title')->unique();
+            $table->string('title',60)->unique();
             $table->string('status');
             $table->timestamps();
         });
